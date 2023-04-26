@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backoffice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backoffice
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: backoffice
+    spec:
+      containers:
+        - name: backoffice
+          image: <<CR_URL>>/backoffice:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+                cpu: "#{pod_cpu_request}#"
+            limits:
+                cpu: "#{pod_cpu_limit}#"
+          env:
+            - name: APP_ENV
+              value: "product"
+            - name: DB_PREFIX
+              value: "#{db_prefix}#"
+      imagePullSecrets:
+        - name: cr-auth
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backoffice
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+  selector:
+    app: backoffice

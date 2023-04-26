@@ -1,0 +1,17 @@
+{
+    "name": "BrandApi",
+    "alias": "brandapi",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\BrandApi\\Providers\\BrandApiServiceProvider",
+        "Modules\\BrandApi\\Providers\\RepositoryServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

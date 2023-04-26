@@ -1,0 +1,106 @@
+.hy-table {
+    text-align: center;
+}
+.hy-customer {
+    margin-left: 10px;
+    text-align: right;
+    padding: 15px;
+}
+
+
+.form-control-feedback {
+    color: red;
+}
+.note-editor, .note-toolbar, .note-editor .note-editing-area {
+    position: static;
+}
+.pn-pointer , .fa-caret-down , .fa-caret-up{
+    cursor: pointer;
+}
+
+#fade {
+    background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+.spinner {
+    font-size: 10px;
+    height: 30px;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 50px;
+}
+.spinner > div {
+    animation: 1.2s ease-in-out 0s normal none infinite running stretchdelay;
+    background-color: #fff;
+    display: inline-block;
+    height: 100%;
+    width: 6px;
+}
+.spinner .rect2 {
+    animation-delay: -1.1s;
+}
+.spinner .rect3 {
+    animation-delay: -1s;
+}
+.spinner .rect4 {
+    animation-delay: -0.9s;
+}
+.spinner .rect5 {
+    animation-delay: -0.8s;
+}
+@keyframes stretchdelay {
+    0%, 40%, 100% {
+        transform: scaleY(0.4);
+    }
+    20% {
+        transform: scaleY(1);
+    }
+}
+@keyframes stretchdelay {
+    0%, 40%, 100% {
+        transform: scaleY(0.4);
+    }
+    20% {
+        transform: scaleY(1);
+    }
+}
+.kt-portlet__body, .kt-form__body {overflow-x: auto}
+
+table > thead > tr > th > p {text-align: left; margin: auto}
+
+.fixscroll {
+    height: 500px;
+    overflow-y: auto;
+}
+
+.note-editing-area {
+    position: unset !important;
+}
+.note-editor {
+    /*position: inherit !important;*/
+    z-index: 150 !important;
+}
+.note-editor .modal {
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+.note-editor.note-frame.fullscreen .note-editable {
+    height: 100vh !important;
+}
+.note-editing-area .note-editable {
+    min-height: 300px !important;
+}
+.modal-backdrop {
+    z-index: 100 !important;
+}
+.note-editor .modal-dialog {
+    margin: 10.75rem auto !important;
+}
